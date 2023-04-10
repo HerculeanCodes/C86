@@ -2,8 +2,8 @@ var grades = [];
         var update_scores = function () {
            var val = get_item_list(grades);
            //Add the appropriate id names to read scores, student_name
-           document.getElementById("score").value = "";
-           document.getElementById("student_name").value = val;
+           document.getElementById("scores").value = val;
+           document.getElementById("student_name").value = "";
            document.getElementById("score").value = "";   
            document.getElementById("student_name").focus();
         }    
@@ -12,7 +12,7 @@ var grades = [];
         var last = document.getElementById("student_name").value;
                 var score = parseFloat(document.getElementById('score').value);
                 grades.push([last, score]);  
-                update_scores(grades);
+                update_scores();
                 document.getElementById("average_score").value = getAverageScore(grades);
         }
 
@@ -64,4 +64,3 @@ var grades = [];
                 document.getElementById("sort_button").onclick = sort_click;      
                 document.getElementById("student_name").focus();
         }
-        
